@@ -1,0 +1,16 @@
+ {% extends 'main.html' %} <!--Going to be the same template to delete anything. Confirmation "Are you sure?", then back button and confirm-->
+
+ {% block content %}
+
+<form method="POST" action=""> <!--Sending post request-->
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{obj}}"?</p> <!---->
+
+    
+    <a href="{{request.META.HTTP_REFERER}}">Go Back</a> <!--User goes back to the previous page from where they came from. The META DATA-->
+    <input type="submit" value="Confirm" />
+
+</form>
+
+
+ {% endblock content %}
